@@ -78,7 +78,8 @@ function App() {
           min="0"
           className="w-50"
         />
-        <h4 className="mt-4">Speed</h4>
+        <Speed></Speed>
+        {/* <h4 className="mt-4">Speed</h4>
         <input
           type="range"
           step="0.1"
@@ -89,7 +90,7 @@ function App() {
           max="1.2"
           min="0.1"
           className="w-50 mt-4"
-        />
+        /> */}
         <div className="d-flex justify-content-center">
           <Button
             onClick={() => playRecording()}
