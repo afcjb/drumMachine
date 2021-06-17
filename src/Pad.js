@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
 
-export default function Pad({ clip, volume, setRecording }) {
+export default function Pad({ clip, volume, setRecording, power }) {
   const [active, setActive] = useState(false);
 
-  console.log(volume);
-
   const playSound = () => {
+    if (!power) return;
     const audioTag = document.getElementById(clip.keyTrigger);
     setActive(true);
     setTimeout(() => setActive(false), 300);
@@ -24,7 +23,7 @@ export default function Pad({ clip, volume, setRecording }) {
     return () => {
       document.removeEventListener("keydown", handleKeyPress);
     };
-  }, []);
+  }, [volume, power]);
 
   return (
     <div
